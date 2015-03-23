@@ -1,0 +1,14 @@
+my_module=require("./my_module.js");
+directory=process.argv[2];
+filter_extension=process.argv[3];
+my_module(directory,filter_extension,function(err,data){
+	if(err){
+		console.log(err);
+		return;
+	}
+	else{
+		for(i=0;i<data.length;i++){
+			console.log(data[i]);
+		}
+	}
+})

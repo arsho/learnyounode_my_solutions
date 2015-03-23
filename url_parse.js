@@ -1,0 +1,11 @@
+var url=require("url");
+obj=url.parse("/test?iso=2015-03-23T04:43:08.578Z",true);
+//console.log(obj.query.q);
+iso_time=obj.query.iso;
+my_date=new Date(iso_time);
+vhour=my_date.getHours();
+vmin=my_date.getMinutes();
+vsec=my_date.getSeconds();
+time_obj={hour: vhour,minute: vmin,second: vsec};
+ret_str=JSON.stringify(time_obj);
+console.log(ret_str);

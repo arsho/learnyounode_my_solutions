@@ -1,0 +1,12 @@
+fs=require("fs");
+path=require("path");
+directory=process.argv[2];
+filter_ext="."+process.argv[3];
+fs.readdir(directory,function(err,list){
+	for(i=0;i<list.length;i++){
+		file_ext=path.extname(list[i]);
+		if(file_ext==filter_ext){
+			console.log(list[i]);
+		}
+	}
+});
